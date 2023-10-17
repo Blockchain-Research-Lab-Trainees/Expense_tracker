@@ -23,7 +23,7 @@ class _NewExpenseState extends State<NewExpense>{
           TextField(
             maxLength: 30,
             decoration: InputDecoration(
-              hintText: 'hello'
+              hintText: 'hey'
             ),
           )
         ],
