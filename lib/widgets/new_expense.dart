@@ -57,7 +57,7 @@ class _NewExpenseState extends State<NewExpense>{
                     decoration: InputDecoration(
                       //hintText: '₹'
                           prefixText : '₹',
-                      labelText: 'Amount',
+                      labelText: '₹',
                     ),
               ),
               const SizedBox(height: 10),
