@@ -49,11 +49,29 @@ final List<Expense> _registeredExpenses = [
 
 void _openAddExpenseOverlay(){
   showModalBottomSheet(
+    isScrollControlled: true,
       context: (context),
-      builder: (ctx) => NewExpense()
+      builder: (ctx) => NewExpense(onAddExpense: _addExpense)
   );
 
 }
+
+
+void _addExpense(Expense expense){
+  setState(() {
+    _registeredExpenses.add(expense);
+  });
+}
+
+
+void _removeExpense(Expense expense){
+  setState(() {
+    _registeredExpenses.remove(expense);
+  });
+}
+
+
+
   @override
 
   Widget build(BuildContext context){
@@ -75,10 +93,13 @@ void _openAddExpenseOverlay(){
       Text('The chart'
       ),
     Expanded(
-        child: ExpensesList(expenses: _registeredExpenses)
+        child: ExpensesList(expenses: _registeredExpenses,
+        onRemoveExpense: _removeExpense,
+        )
     )
       ]
   ),
+
   );
 
   }

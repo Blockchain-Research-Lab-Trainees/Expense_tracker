@@ -6,6 +6,7 @@ final formatter = DateFormat.yMd();
 var uuid = Uuid();
 
 enum Category {work, leisure, food, rent}
+Category selectedCategoryy = Category.leisure;
 
 const categoryIcons = {
 
